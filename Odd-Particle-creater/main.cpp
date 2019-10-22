@@ -15,6 +15,8 @@ using namespace std;
 
 int main() {
     
+    int height{720};
+    int width{1280};
     SDL_Window *window = nullptr;
     SDL_Init(SDL_INIT_VIDEO);
     
@@ -48,6 +50,14 @@ int main() {
         SDL_DestroyWindow(window);
         SDL_Quit();
     }
+    Uint32 *buffer = new Uint32[1280*720];
+
+    memset(buffer, 0xFF, 1280*720*sizeof(Uint32));
+    SDL_UpdateTexture(texture, NULL, buffer, width * sizeof(Uint32));
+    SDL_RenderClear(renderer);
+    SDL_RenderCopy(renderer, texture, NULL, NULL);
+    SDL_RenderPresent(renderer);
+    
     bool exit{false};
     SDL_Event events;
     
@@ -58,6 +68,8 @@ int main() {
             }
         }
     }
+    
+    delete [] buffer;
     SDL_DestroyRenderer(renderer);
     SDL_DestroyTexture(texture);
     SDL_DestroyWindow(window);
@@ -65,3 +77,5 @@ int main() {
     
     return 0;
 }
+
+

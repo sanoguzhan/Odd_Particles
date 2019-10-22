@@ -9,8 +9,6 @@
 /* Begin PBXBuildFile section */
 		100E717A235FA1CB00569CD7 /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 100E7179235FA1CB00569CD7 /* main.cpp */; };
 		100E718A235FB13A00569CD7 /* libSDL2-2.0.0.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 100E7189235FB13A00569CD7 /* libSDL2-2.0.0.dylib */; };
-		100E718D235FC0EC00569CD7 /* Window.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 100E718B235FC0EC00569CD7 /* Window.cpp */; };
-		100E718E235FC0EC00569CD7 /* Window.hpp in Headers */ = {isa = PBXBuildFile; fileRef = 100E718C235FC0EC00569CD7 /* Window.hpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -31,8 +29,6 @@
 		100E7185235FAC0200569CD7 /* Headers */ = {isa = PBXFileReference; lastKnownFileType = folder; name = Headers; path = SDL2.framework/Versions/A/Headers; sourceTree = "<group>"; };
 		100E7187235FAC3300569CD7 /* SDL2.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = SDL2.framework; sourceTree = "<group>"; };
 		100E7189235FB13A00569CD7 /* libSDL2-2.0.0.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = "libSDL2-2.0.0.dylib"; path = "../../../../../../usr/local/Cellar/sdl2/2.0.10/lib/libSDL2-2.0.0.dylib"; sourceTree = "<group>"; };
-		100E718B235FC0EC00569CD7 /* Window.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = Window.cpp; sourceTree = "<group>"; };
-		100E718C235FC0EC00569CD7 /* Window.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = Window.hpp; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -68,8 +64,6 @@
 			isa = PBXGroup;
 			children = (
 				100E7179235FA1CB00569CD7 /* main.cpp */,
-				100E718B235FC0EC00569CD7 /* Window.cpp */,
-				100E718C235FC0EC00569CD7 /* Window.hpp */,
 			);
 			path = "Odd-Particle-creater";
 			sourceTree = "<group>";
@@ -91,7 +85,6 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				100E718E235FC0EC00569CD7 /* Window.hpp in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -154,7 +147,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				100E717A235FA1CB00569CD7 /* main.cpp in Sources */,
-				100E718D235FC0EC00569CD7 /* Window.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
