@@ -50,19 +50,13 @@ bool particles::Window::init() {
     
     return true;
 }
-bool particles::Window::processEvents() {
-    SDL_Event events;
-    while(SDL_PollEvent(&events)){
-        if(events.type == SDL_QUIT)
-            return false;
-        else
-            continue;
-    }
-    return true;
-}
+
 void Window::Pixels(int x, int y, Uint8 red, Uint8 green, Uint8 blue){
-    size_t width{1280};
+    if(x < 0 || x >= 1280 || y < 0 || y >= 720)
+        return;
+    int width{1280};
     Uint32 color{0};
+    
     color += red;
     color <<= 8;
     color += green;
@@ -79,6 +73,21 @@ void Window::update(){
     SDL_RenderClear(w_renderer);
     SDL_RenderCopy(w_renderer, w_texture, NULL, NULL);
     SDL_RenderPresent(w_renderer);
+}
+void Window::updateRenderer() {
+    SDL_RenderClear(w_renderer);
+    SDL_RenderCopy(w_renderer, w_texture, nullptr, nullptr);
+    SDL_RenderPresent(w_renderer);
+}
+bool Window::processEvents() {
+    SDL_Event events;
+    while(SDL_PollEvent(&events)){
+        if(events.type == SDL_QUIT)
+            return false;
+        else
+            continue;
+    }
+    return true;
 }
 void particles::Window::close(){
     delete [] w_buffer;

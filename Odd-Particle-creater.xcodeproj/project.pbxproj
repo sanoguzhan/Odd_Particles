@@ -11,6 +11,10 @@
 		100E718A235FB13A00569CD7 /* libSDL2-2.0.0.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 100E7189235FB13A00569CD7 /* libSDL2-2.0.0.dylib */; };
 		100E719123604AD500569CD7 /* Windowcreater.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 100E718F23604AD500569CD7 /* Windowcreater.cpp */; };
 		100E719223604AD500569CD7 /* Windowcreater.hpp in Headers */ = {isa = PBXBuildFile; fileRef = 100E719023604AD500569CD7 /* Windowcreater.hpp */; };
+		100E719923608FB700569CD7 /* Particles.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 100E719723608FB700569CD7 /* Particles.cpp */; };
+		100E719A23608FB700569CD7 /* Particles.hpp in Headers */ = {isa = PBXBuildFile; fileRef = 100E719823608FB700569CD7 /* Particles.hpp */; };
+		100E719D23608FDE00569CD7 /* crowd.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 100E719B23608FDE00569CD7 /* crowd.cpp */; };
+		100E719E23608FDE00569CD7 /* crowd.hpp in Headers */ = {isa = PBXBuildFile; fileRef = 100E719C23608FDE00569CD7 /* crowd.hpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -33,6 +37,10 @@
 		100E7189235FB13A00569CD7 /* libSDL2-2.0.0.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = "libSDL2-2.0.0.dylib"; path = "../../../../../../usr/local/Cellar/sdl2/2.0.10/lib/libSDL2-2.0.0.dylib"; sourceTree = "<group>"; };
 		100E718F23604AD500569CD7 /* Windowcreater.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = Windowcreater.cpp; path = "Odd-Particle-creater/Windowcreater.cpp"; sourceTree = "<group>"; };
 		100E719023604AD500569CD7 /* Windowcreater.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; name = Windowcreater.hpp; path = "Odd-Particle-creater/Windowcreater.hpp"; sourceTree = "<group>"; };
+		100E719723608FB700569CD7 /* Particles.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = Particles.cpp; sourceTree = "<group>"; };
+		100E719823608FB700569CD7 /* Particles.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = Particles.hpp; sourceTree = "<group>"; };
+		100E719B23608FDE00569CD7 /* crowd.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = crowd.cpp; sourceTree = "<group>"; };
+		100E719C23608FDE00569CD7 /* crowd.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = crowd.hpp; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -50,7 +58,11 @@
 		100E716D235FA1CB00569CD7 = {
 			isa = PBXGroup;
 			children = (
+				100E719723608FB700569CD7 /* Particles.cpp */,
+				100E719823608FB700569CD7 /* Particles.hpp */,
 				100E718F23604AD500569CD7 /* Windowcreater.cpp */,
+				100E719B23608FDE00569CD7 /* crowd.cpp */,
+				100E719C23608FDE00569CD7 /* crowd.hpp */,
 				100E719023604AD500569CD7 /* Windowcreater.hpp */,
 				100E7178235FA1CB00569CD7 /* Odd-Particle-creater */,
 				100E7177235FA1CB00569CD7 /* Products */,
@@ -91,6 +103,8 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				100E719E23608FDE00569CD7 /* crowd.hpp in Headers */,
+				100E719A23608FB700569CD7 /* Particles.hpp in Headers */,
 				100E719223604AD500569CD7 /* Windowcreater.hpp in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -153,6 +167,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				100E719923608FB700569CD7 /* Particles.cpp in Sources */,
+				100E719D23608FDE00569CD7 /* crowd.cpp in Sources */,
 				100E717A235FA1CB00569CD7 /* main.cpp in Sources */,
 				100E719123604AD500569CD7 /* Windowcreater.cpp in Sources */,
 			);
