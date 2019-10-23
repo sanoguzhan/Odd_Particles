@@ -11,19 +11,26 @@
 
 #include "Particles.hpp"
 #include <stdio.h>
+
 namespace particles{
 
 class Crowd{
 public:
-    const static int No_Particle{1000};
-private:
-    Particle *w_pParticles;
+    const static int No_Particle{1000000};
     
+private:
+    Particle * w_pParticles;
+    int lastTime;
+
 public:
     Crowd();
     virtual ~Crowd();
+    void update(int elapsed);
     
-     const Particle *const getParticle(){ return w_pParticles;}
+    const Particle * const getParticle() {
+        return w_pParticles;
+        
+    };
 };
 }
 

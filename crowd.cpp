@@ -8,11 +8,24 @@
 
 #include "crowd.hpp"
 
-namespace  particles {
-Crowd:: Crowd(){
+namespace  particles{
+Crowd::Crowd(): lastTime(0) {
     w_pParticles = new Particle[No_Particle];
+
 }
-Crowd:: ~Crowd() {
+
+Crowd::~Crowd() {
     delete [] w_pParticles;
 }
+void Crowd::update(int elapsed) {
+
+    int interval = elapsed - lastTime;
+
+    for (int i{0}; i < Crowd::No_Particle; ++i) {
+        w_pParticles[i].update(interval);
+    }
+
+    lastTime = elapsed;
+}
+
 }

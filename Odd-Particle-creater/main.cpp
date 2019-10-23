@@ -16,45 +16,49 @@
 #include <time.h>
 #include "crowd.hpp"
 using namespace particles;
-
+using namespace std;
 
 int main() {
     
 //    int height{720};
     srand(time(NULL));
+    
     Window window;
     if(window.init() == false)
         std::cout << "SDL initializing Error" << std::endl;
+    
     Crowd crowd;
+    
     while(1){
         
-        const particles::Particle * const pParticles = crowd.getParticle();
-        for(size_t i{0}; Crowd::No_Particle; ++i){
-            Particle particle = pParticles[i];
-            int x = (particle.m_x + 1) * 640;
-            int y = (particle.m_y + 1) * 360;
-            window.Pixels(x,y,255,255,255);
-        }
-        /*
         size_t elapsed = SDL_GetTicks();
-        double green = 128 * (1 + sin(elapsed * 0.0001));
+        crowd.update(elapsed);
+        
+        double green = 128 * (1 + sin(elapsed * 0.001));
         green > 255 ? green = 255 : green ;
-        double red = 128 * (1 + sin(elapsed * 0.0002));
+        double red = 128 * (1 + sin(elapsed * 0.002));
         red > 255 ? red = 255 : red ;
-        double blue = 128 * (1 + sin(elapsed * 0.0003));
+        double blue = 128 * (1 + sin(elapsed * 0.003));
         blue > 255 ? blue = 255 : blue ;
-        std::cout << green << std::endl;
-        for(int y{0}; y < 720; ++y){
-            for(int x{0}; x < 1280; ++x)
-               window.Pixels(x,y,red,green,blue);
-        }*/
 
+        const Particle * const pParticles = crowd.getParticle();
+        
+        for(int i{0}; i < Crowd::No_Particle; i++){
+            Particle particle = pParticles[i];
+            
+            int x = (particle.m_x + 1) * 320;
+            int y = particle.m_y *640 + 180;
+            window.Pixels(x,y,red,green,blue);
+        }
+            
+        window.boxBlur();
         window.update();
         if(window.processEvents() == false)
            break;
     }
 
     window.close();
+
     return 0;
 }
 

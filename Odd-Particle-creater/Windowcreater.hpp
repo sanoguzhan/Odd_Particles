@@ -13,10 +13,11 @@
 namespace particles {
 class Window {
 private:
-    SDL_Window *w_window = nullptr;
-    SDL_Renderer* w_renderer;
-    SDL_Texture* w_texture;
-    Uint32 *w_buffer;
+    SDL_Window *w_window;
+    SDL_Renderer *w_renderer;
+    SDL_Texture *w_texture;
+    Uint32 *w_buffer1;
+    Uint32 *w_buffer2;
 public:
     Window();
     bool init();
@@ -24,6 +25,7 @@ public:
     void Pixels(int x, int y, Uint8 red, Uint8 green, Uint8 blue);
     void updateRenderer();
     bool processEvents();
+    void boxBlur();
     void close();
 };
 }
