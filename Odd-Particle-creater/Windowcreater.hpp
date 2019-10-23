@@ -20,6 +20,8 @@ private:
 public:
     Window();
     bool init();
+    void update();
+    void Pixels(int x, int y, Uint8 red, Uint8 green, Uint8 blue);
     bool processEvents();
     void close();
 };

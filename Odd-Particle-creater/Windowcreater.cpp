@@ -14,7 +14,6 @@ Window::Window() :
 }
 
 bool particles::Window::init() {
-    int width{1280};
     SDL_Init(SDL_INIT_VIDEO);
     
     if (SDL_Init(SDL_INIT_VIDEO) < 0){
@@ -45,17 +44,9 @@ bool particles::Window::init() {
         SDL_DestroyWindow(w_window);
         SDL_Quit();
     }
-    Uint32 *buffer = new Uint32[1280*720];
+    w_buffer= new Uint32[1280*720];
 
-    memset(buffer, 0, 1280*720*sizeof(Uint32));
-    buffer[30000] = 0xFFFFFFFF;
-    for(size_t i{0}; i < 1280*360 ; ++i)
-        buffer[i] = 0x00FFFFFF;
-    
-    SDL_UpdateTexture(w_texture, NULL, buffer, width * sizeof(Uint32));
-    SDL_RenderClear(w_renderer);
-    SDL_RenderCopy(w_renderer, w_texture, NULL, NULL);
-    SDL_RenderPresent(w_renderer);
+    memset(w_buffer, 0, 1280*720*sizeof(Uint32));
     
     return true;
 }
@@ -69,7 +60,26 @@ bool particles::Window::processEvents() {
     }
     return true;
 }
+void Window::Pixels(int x, int y, Uint8 red, Uint8 green, Uint8 blue){
+    size_t width{1280};
+    Uint32 color{0};
+    color += red;
+    color <<= 8;
+    color += green;
+    color <<= 8;
+    color += blue;
+    color <<= 8;
+    color += 0xFF;
+    w_buffer[(y * width) + x] = color;
+}
 
+void Window::update(){
+    int width{1280};
+    SDL_UpdateTexture(w_texture, NULL, w_buffer, width * sizeof(Uint32));
+    SDL_RenderClear(w_renderer);
+    SDL_RenderCopy(w_renderer, w_texture, NULL, NULL);
+    SDL_RenderPresent(w_renderer);
+}
 void particles::Window::close(){
     delete [] w_buffer;
     SDL_DestroyRenderer(w_renderer);
