@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		100E717A235FA1CB00569CD7 /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 100E7179235FA1CB00569CD7 /* main.cpp */; };
 		100E718A235FB13A00569CD7 /* libSDL2-2.0.0.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 100E7189235FB13A00569CD7 /* libSDL2-2.0.0.dylib */; };
+		100E719123604AD500569CD7 /* Windowcreater.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 100E718F23604AD500569CD7 /* Windowcreater.cpp */; };
+		100E719223604AD500569CD7 /* Windowcreater.hpp in Headers */ = {isa = PBXBuildFile; fileRef = 100E719023604AD500569CD7 /* Windowcreater.hpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -29,6 +31,8 @@
 		100E7185235FAC0200569CD7 /* Headers */ = {isa = PBXFileReference; lastKnownFileType = folder; name = Headers; path = SDL2.framework/Versions/A/Headers; sourceTree = "<group>"; };
 		100E7187235FAC3300569CD7 /* SDL2.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = SDL2.framework; sourceTree = "<group>"; };
 		100E7189235FB13A00569CD7 /* libSDL2-2.0.0.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = "libSDL2-2.0.0.dylib"; path = "../../../../../../usr/local/Cellar/sdl2/2.0.10/lib/libSDL2-2.0.0.dylib"; sourceTree = "<group>"; };
+		100E718F23604AD500569CD7 /* Windowcreater.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = Windowcreater.cpp; path = "Odd-Particle-creater/Windowcreater.cpp"; sourceTree = "<group>"; };
+		100E719023604AD500569CD7 /* Windowcreater.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; name = Windowcreater.hpp; path = "Odd-Particle-creater/Windowcreater.hpp"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -46,6 +50,8 @@
 		100E716D235FA1CB00569CD7 = {
 			isa = PBXGroup;
 			children = (
+				100E718F23604AD500569CD7 /* Windowcreater.cpp */,
+				100E719023604AD500569CD7 /* Windowcreater.hpp */,
 				100E7178235FA1CB00569CD7 /* Odd-Particle-creater */,
 				100E7177235FA1CB00569CD7 /* Products */,
 				100E7184235FAC0200569CD7 /* Frameworks */,
@@ -85,6 +91,7 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				100E719223604AD500569CD7 /* Windowcreater.hpp in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -147,6 +154,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				100E717A235FA1CB00569CD7 /* main.cpp in Sources */,
+				100E719123604AD500569CD7 /* Windowcreater.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
